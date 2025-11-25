@@ -47,11 +47,6 @@ New transactions: 0
 New orders: 0
 ```
 
-### `migrate_sqlite_cash_history.py` - Data Migration
-- Migrated 806 transactions ✅
-- Migrated 3,363 cash snapshots ✅
-- Preserves original SQLite database ✅
-
 ## 🏗️ Architecture
 
 ### **Data Collection Strategy**
