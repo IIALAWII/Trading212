@@ -13,9 +13,12 @@ class MetadataEndpoints:
         self.client = client
 
     def fetch_exchanges(self) -> list[Mapping[str, Any]]:
+        '''Fetch available exchanges.'''
         response = self.client.get("/equity/metadata/exchanges", label="/equity/metadata/exchanges")
         return response.json()
 
     def fetch_instruments(self) -> list[Mapping[str, Any]]:
-        response = self.client.get("/equity/metadata/instruments", label="/equity/metadata/instruments")
+        '''Fetch available instruments.'''
+        response = self.client.get("/equity/metadata/instruments",
+        label="/equity/metadata/instruments")
         return response.json()

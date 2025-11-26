@@ -38,7 +38,8 @@ class T212Client(AbstractContextManager["T212Client"]):
         wait=wait_exponential(multiplier=2, min=2, max=60),
         retry=retry_if_exception_type((httpx.HTTPError, httpx.HTTPStatusError)),
     )
-    def get(self, path: str, params: Mapping[str, Any] | None = None, *, label: str | None = None) -> httpx.Response:
+    def get(self, path: str, params: Mapping[str, Any] | None = None, *,
+            label: str | None = None) -> httpx.Response:
         """Issue a GET request with shared headers and retry strategy."""
 
         rate_limit_key = label or path

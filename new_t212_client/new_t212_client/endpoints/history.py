@@ -13,13 +13,18 @@ class HistoryEndpoints:
         self.client = client
 
     def fetch_orders(self, params: Mapping[str, Any] | None = None) -> Mapping[str, Any]:
-        response = self.client.get("/equity/history/orders", params=params, label="/equity/history/orders")
+        '''Fetch paginated historical orders.'''
+        response = self.client.get("/equity/history/orders",
+        params=params, label="/equity/history/orders")
         return response.json()
 
     def fetch_dividends(self, params: Mapping[str, Any] | None = None) -> Mapping[str, Any]:
+        '''Fetch paginated historical dividends.'''
         response = self.client.get("/history/dividends", params=params, label="/history/dividends")
         return response.json()
 
     def fetch_transactions(self, params: Mapping[str, Any] | None = None) -> Mapping[str, Any]:
-        response = self.client.get("/history/transactions", params=params, label="/history/transactions")
+        '''Fetch paginated historical transactions.'''
+        response = self.client.get("/history/transactions",
+        params=params, label="/history/transactions")
         return response.json()

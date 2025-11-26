@@ -8,7 +8,7 @@ This script collects ALL current data:
 - NEW transactions since last collection (incremental, ~1-2 API calls)
 
 Uses smart incremental logic - only fetches NEW data!
-Total: ~5 API calls, runs in ~15 seconds.
+Total: ~5 API calls, runs in ~2 seconds.
 """
 
 import logging
